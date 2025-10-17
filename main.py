@@ -64,7 +64,7 @@ TO = 'amewugaaws@gmail.com'
 
 # Create message body
 message = MIMEMultipart()
-message['Subject'] = f"HEADLINES - GRAPHIC ONLINE {str(now.day)} - {str(now.year)}"
+message['Subject'] = f"HEADLINES - GRAPHIC ONLINE [Automated Email] {now.month}-{str(now.day)}-{str(now.year)}"
 message ['From'] = FROM
 message ['To'] = TO
 # Attach the html body
