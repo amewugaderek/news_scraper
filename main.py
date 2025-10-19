@@ -60,13 +60,17 @@ email_content += ("<br><br> End of Message")
 # SERVER = smtplib.SMTP('smtp.gmail.com', 587)
 FROM = os.getenv("EMAIL_ADDRESS")
 PASS = os.getenv("EMAIL_PASSWORD")
-TO = 'amewugaaws@gmail.com'
+TO = ['amewugaaws@gmail.com', 'arhinstephen920@gmail.com']
+# TO =
+
 
 # Create message body
 message = MIMEMultipart()
 message['Subject'] = f"HEADLINES - GRAPHIC ONLINE [Automated Email] {now.month}-{str(now.day)}-{str(now.year)}"
 message ['From'] = FROM
-message ['To'] = TO
+# Convert list to string for the header
+message ['To'] = ", ".join(TO)
+
 # Attach the html body
 message.attach(MIMEText(email_content, 'html'))
 
